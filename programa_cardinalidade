@@ -1,0 +1,22 @@
+//intuito do programa é contar a cardinalidade de um conjunto. (sem contar repetidos)
+#include <iostream>
+#include <vector>
+#include <string>
+
+int main()
+{
+    std::vector <std::string> itens = {"azul", "vermelho", "azul", "amarelo"};
+    
+    for (int i = 0 ; i < itens.size(); i++) {
+        int j = 1;
+        if (itens[i] = itens[j+i]) {
+            std::cout << "há um item repetido.";
+        }
+    }
+    
+    for (std::string item : itens) {
+        
+    } 
+
+    return 0;
+}
