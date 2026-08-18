@@ -1,0 +1,19 @@
+#include <iostream>
+#include <vector>
+#include <string>
+
+std::vector <std::string> conj_a = {"1", "2", "3"};
+std::vector <std::string> conj_b = {"3", "4", "5"};
+
+int main()
+{
+    std::cout<<"Dado o seguinte conjunto: \n";
+    std::cout<<"União: ";
+    
+    for (int i = 0 ; i < conj_b.size(); i++) {
+        conj_a.push_back(conj_b[i]);
+    }
+    std::cout<<conj_a[5];
+
+    return 0;
+}
