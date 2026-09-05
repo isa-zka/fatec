@@ -1,0 +1,27 @@
+std::vector <int> conj_a;
+
+std::vector <int> conj_b;
+
+int main()
+{
+    int count = 0;
+    int cardinalidade_A;
+    int elemento;
+    
+    std::cout << "Indique a cardinalidade do conjunto origem: ";
+    std::cin >> cardinalidade_A;
+    std::cout << "Indique a os elementos do conjunto: ";
+    while (count < cardinalidade_A) {
+        std::cin >> elemento;
+        conj_a.push_back(elemento);
+        count++;
+    }
+    
+    std::cout << "Indique a cardinalidade do conjunto destino: ";
+    for (int i = 0 ; i < conj_a.size(); i++) {
+        for (int j = 0 ; j < conj_b.size(); j++) {
+            std::cout << "<" << conj_a[i] << ", " << conj_b[j] << "> \n";
+        }
+    }
+    return 0;
+}
