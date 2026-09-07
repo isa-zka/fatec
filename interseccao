@@ -1,0 +1,22 @@
+#include <iostream>
+#include <vector>
+#include <string>
+
+std::vector <std::string> conj_a = {"1", "2", "3"};
+std::vector <std::string> conj_b = {"3", "4", "5"};
+
+int main()
+{
+    std::cout<<"Dado o seguinte conjunto: \n";
+    std::cout<<"Intersecção: ";
+    
+    for (int i = 0 ; i < conj_a.size(); i++) {
+        for (int j = 0; j < conj_b.size(); j++) {
+            if (conj_a[i] == conj_b[j]) {
+                std::cout << conj_b[j];
+            }
+        }
+    }
+
+    return 0;
+}
