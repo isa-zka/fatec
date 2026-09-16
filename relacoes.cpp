@@ -1,14 +1,15 @@
+//programa de relações. você insere um conjunto desejado origem e destino. o programa volta um produto cartesiano e pergunta quais
+//relações você quer manter. logo, ele vê se essas relações estão na tabela (matriz), caso não, ele volta um F.
 #include <iostream>
 #include <vector>
 
 std::vector <int> origem;
 std::vector <int> destino;
+
 int count = 0;
-int cardinalidade_A, cardinalidade_B;
-int elementoa, elementob;
-int x = origem.size
-int y = destino.size
-int relacoes_bool [x][y]; //linha, col
+int cardinalidade_A, cardinalidade_B, elementoa, elementob;
+
+//int relacoes_bool [x][y]; //linha, col, ou seja, destino e origem.
 
 int main()
 {
@@ -34,6 +35,22 @@ int main()
         destino.push_back(elementob);
         count++;
     }
+    
+    int x = destino.size();
+    int y = origem.size();
+    
+    //por aqui, já tem o conjunto pronto. o for abaixo retorna todas as relações.
+    
+    count = 1;
+    
+    for (int i = 0 ; i < y; i++) { //a origem sendo primeiro
+        for (int j = 0 ; j < x; j++) { //o destino em segundo
+            std::cout << count << ". <" << origem[i] << ", " << destino[j] << "> \n";
+            count++;
+        }
+    }
+    
+    std::cout<<"Quais relações você gostaria de manter? [Indique números].";
     
 
     return 0;
