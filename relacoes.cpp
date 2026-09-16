@@ -64,6 +64,34 @@ int main()
 
     } while (escolha != 0);
      
+    //agora vou ter que comparar as relações para retornar v/f.
+    
+    /**if (relacoes first e second nao estiver no vector produto (vou aderir i e j pra relacao jaja relacoes.first[0] || relacoes.second[0]) {
+        std::cout << "F"
+    } else {
+        std::cout << "V";
+    }**/
+    
+    bool encontrou = false;
+    
+    for (int j = 0; j < relacoes.size(); j++) {
 
+        
+
+        for (int i = 0; i < produto.size(); i++) {
+
+            if (produto[i] == relacoes[j]) {
+                encontrou = true;
+                break;
+            }
+        }
+    }
+
+    if (encontrou) {
+        std::cout << "V";
+    } else {
+        std::cout << "F"; //mas o resto tem que dar tudo falso btw
+    }
+    
     return 0;
 }
