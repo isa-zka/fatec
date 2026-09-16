@@ -54,10 +54,16 @@ int main()
         }
     }
     
-    std::cout<<"Quais relações você gostaria de manter? [Indique números]. ";
+    std::cout<<"Quais relações você gostaria de manter? [Indique números | Digite 0 para terminar] "; //devia ter feito isso no começo, mas com letra, já que 0 pode ser elemento.
+    do {
     std::cin >> escolha;
-    relacoes.push_back(produto[escolha - 1]); //vou ter que fazer um for de novo?
-    
+
+    if (escolha != 0) {
+        relacoes.push_back(produto[escolha - 1]);
+    }
+
+    } while (escolha != 0);
+     
 
     return 0;
 }
