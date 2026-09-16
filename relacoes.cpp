@@ -5,9 +5,12 @@
 
 std::vector <int> origem;
 std::vector <int> destino;
+std::vector<std::pair<int, int>> produto; //guardar o produto cartesiano para escolha posterior.
+std::vector<std::pair<int, int>> relacoes;
 
 int count = 0;
-int cardinalidade_A, cardinalidade_B, elementoa, elementob;
+int cardinalidade_A, cardinalidade_B, elementoa, elementob; 
+int escolha; //para linha 58 
 
 //int relacoes_bool [x][y]; //linha, col, ou seja, destino e origem.
 
@@ -45,12 +48,15 @@ int main()
     
     for (int i = 0 ; i < y; i++) { //a origem sendo primeiro
         for (int j = 0 ; j < x; j++) { //o destino em segundo
+            produto.push_back({origem[i], destino[j]});
             std::cout << count << ". <" << origem[i] << ", " << destino[j] << "> \n";
             count++;
         }
     }
     
-    std::cout<<"Quais relações você gostaria de manter? [Indique números].";
+    std::cout<<"Quais relações você gostaria de manter? [Indique números]. ";
+    std::cin >> escolha;
+    relacoes.push_back(produto[escolha - 1]); //vou ter que fazer um for de novo?
     
 
     return 0;
