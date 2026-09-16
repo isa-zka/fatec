@@ -46,8 +46,8 @@ int main()
     
     count = 1;
     
-    for (int i = 0 ; i < y; i++) { //a origem sendo primeiro
-        for (int j = 0 ; j < x; j++) { //o destino em segundo
+    for (int i = 0 ; i < y; i++) { 
+        for (int j = 0 ; j < x; j++) { 
             produto.push_back({origem[i], destino[j]});
             std::cout << count << ". <" << origem[i] << ", " << destino[j] << "> \n";
             count++;
@@ -59,7 +59,7 @@ int main()
     std::cin >> escolha;
 
     if (escolha != 0) {
-        relacoes.push_back(produto[escolha - 1]);
+        relacoes.push_back(produto[escolha - 1]); //ja que o count começa no 1, ele ja pega o pair
     }
 
     } while (escolha != 0);
@@ -72,26 +72,26 @@ int main()
         std::cout << "V";
     }**/
     
-    bool encontrou = false;
+    for (int i = 0; i < produto.size(); i++) {
+
+        bool encontrou = false;
     
-    for (int j = 0; j < relacoes.size(); j++) {
-
-        
-
-        for (int i = 0; i < produto.size(); i++) {
-
-            if (produto[i] == relacoes[j]) {
+        for (int j = 0; j < relacoes.size(); j++) {
+    
+            if (produto[i] == relacoes[j]) { //procura se tem par de produto em relações.
                 encontrou = true;
                 break;
             }
         }
+    
+        if (encontrou) {
+            std::cout << "V\n";
+        } else {
+            std::cout << "F\n";
+        }
     }
 
-    if (encontrou) {
-        std::cout << "V";
-    } else {
-        std::cout << "F"; //mas o resto tem que dar tudo falso btw
-    }
+    
     
     return 0;
 }
